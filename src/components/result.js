@@ -2,7 +2,7 @@ import React from 'react';
 import './Result.css';
 
 const Result = (props) => {
-    const {err, city, temp, date,sunrise, sunset, pressure, wind} = props.weather
+    const {err, city, temp, date,sunrise, sunset, pressure, wind, weather} = props.weather
 
     let content = null;
 
@@ -12,15 +12,33 @@ const Result = (props) => {
         const sunsetTime = new Date(sunset * 1000).toLocaleTimeString()
         content = (
             <div>
-            <h3>Wyniki wyszukiwania dla: <em>{city}</em></h3>
-            <h4>Dane dla dnia i godziny: {date}</h4>
-            <h4>Aktualna temperatura: {temp}°C</h4>
-            <h4>Wschód słońca: {sunriseTime}</h4>
-            <h4>Zachód słońca: {sunsetTime}</h4>
-            <h4>Aktualna siła wiatru: {wind} m/h</h4>
-            <h4>Aktualne ciśnienie: {pressure} hPa</h4>   
-
+            <h3>{city}</h3>
+            <p>City Name</p>
+            <h4>{temp}°C</h4>
+            <p>Temperature</p>
+            <div className='higher'>
+                <div className='lower'>
+                    <h4>{date}</h4>
+                    <p>Date and hour</p>
+                </div>
+                <div className='lower'>
+                    <h4>{weather}</h4>
+                    <p>Weather</p>
+                </div>
             </div>
+            <div className='higher'>
+                <div className='lower'>
+                    <h4>{sunriseTime}</h4>
+                    <p>Sunrise</p>
+                </div>
+                <div className='lower'>
+                    <h4>{sunsetTime}</h4>
+                    <p>Sunset</p>
+                </div>
+            </div>
+            
+            </div>
+            
         )
     }
 

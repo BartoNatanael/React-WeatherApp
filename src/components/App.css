@@ -2,23 +2,64 @@
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .App input, .App button {
   margin: 20px;
-  padding: 10px 20px;
+  padding: 10px;
   border: 2px solid grey;
   background-color: white;
+  width: 200px;
+  transition: .3s;
+}
+
+.App input::placeholder{
+  text-align: center;
 }
 
 .App button{
   cursor: pointer;
-  transition: .3s;
 }
 
-.App button:hover{
+.App nav button:hover{
   background-color: black;
   color: white;
   border-color: black;
+}
 
+.App nav input:hover{
+  border-color: black;
+}
+
+nav{
+  padding-left: calc(50vw - 240px);
+}
+
+.App{
+  height: 100vh;
+  width: 100vw;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+
+.chart{
+  position: absolute;
+  right: 0;
+  top:30vh;
+  background-color: rgba(250,250,250,0.5);
+  width: 25vw;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  font-size: 15px;
+  /* border: 2px solid #f2f2f2; */
+  /* transform: translate(100%,0); */
+  transition: 0.3s;
+}
+.chart:hover{
+  background-color: white;
+  /* transform: scale(1.3); */
 }
